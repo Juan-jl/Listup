@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+                    x:Class="Listup.Styles.CurrencySelectionStyles">
+
+    <Style TargetType="StackLayout" x:Key="TitleContainer">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="20,40,20,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="TitleLabel" BasedOn="{StaticResource GlobalTitleLabel}">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="SubtitleLabel">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+    </Style>
+
+    <Style TargetType="Span" x:Key="SubtitleSpanBold">
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style TargetType="CollectionView" x:Key="CtvOptionsCurrency">
+        <Setter Property="Margin" Value="0,20,0,0" />
+        <Setter Property="ItemSizingStrategy" Value="MeasureAllItems" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="OptionsContainer">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="WidthRequest" Value="80" />
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ExclusiveColorForCurrencySelectionContainer}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblCurrencySymbol">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter  Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblCurrencyName">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="MaxLines" Value="2" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+</ResourceDictionary>

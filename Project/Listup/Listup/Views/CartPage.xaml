@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+	xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+	x:Class="Listup.Views.CartPage"
+	xmlns:local="clr-namespace:Listup.Views"
+	x:Name="CartPageName"
+	xmlns:converters="clr-namespace:Listup.Views.Converters"
+    Style="{StaticResource GlobalPrimaryPageBackgroundStyle}">
+
+    <ContentPage.Resources>
+        <converters:BooleanNegationConverter x:Key="BooleanNegation" />
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Cabeçalho -->
+        <Frame Grid.Row="0" Style="{StaticResource Header}">
+            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCartTitleTapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Label Text="&#xf060;" Style="{StaticResource GlobalIconHeader}" FontFamily="FontAwesomeSolid">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="{Binding CartTitle}" Style="{StaticResource GlobalTitleLabel}" />
+                        <Label Text="&#xf044;" Style="{StaticResource GlobalIconHeader}" FontFamily="FontAwesomeSolid" />
+                    </StackLayout>
+                    <Label Text="{Binding CartItemsQuantity, StringFormat='{}{0} itens no total'}" Style="{StaticResource SubtitleLabel}" />
+                </StackLayout>
+
+                <Frame Grid.Column="2" Style="{StaticResource Details}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenCartDetailsCommand}" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text=" DETALHES" Style="{StaticResource DetailsText}" />
+                        <Label Text="&#xf15c;" Style="{StaticResource DetailsIcon}" FontFamily="FontAwesomeSolid" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Frame>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <Frame IsVisible="{Binding CartHasItems, Converter={StaticResource BooleanNegation}}" Style="{DynamicResource EmptyCartItemsContainer}">
+                    <StackLayout>
+                        <Label Text="Não há nenhum item nessa compra." Style="{DynamicResource EmptyCartItemsTitle}"/>
+                        <Label Text="Adicione um item tocando em “Adicionar item”." Style="{DynamicResource EmptyCartItemsSubtitle}" />
+                    </StackLayout>
+                </Frame>
+                <StackLayout IsVisible="{Binding CartHasItems}">
+                    <Frame Style="{DynamicResource LegendFieldContainer}">
+                        <Grid ColumnSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentView Grid.Column="0">
+                                <Label IsVisible="{Binding IsInCartMode}" Text="No carrinho?" Style="{DynamicResource LegendField}" />
+                            </ContentView>
+                            <ContentView Grid.Column="1" Margin="10,0,0,0">
+                                <Label Text="Nome do item:" Style="{DynamicResource LegendField}"  />
+                            </ContentView>
+                            <ContentView Grid.Column="2">
+                                <Label Text="Preço:" Style="{DynamicResource LegendField}" />
+                            </ContentView>
+                            <ContentView Grid.Column="3">
+                                <Label Text="Quantidade:" Style="{DynamicResource LegendField}" />
+                            </ContentView>
+                        </Grid>
+                    </Frame>
+
+                    <CollectionView ItemsSource="{Binding CartItems}" ItemsUpdatingScrollMode="KeepLastItemInView">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem Text="Excluir" BackgroundColor="{StaticResource TertiaryColor}" Command="{Binding BindingContext.DeleteCartItemCommand, Source={x:Reference CartPageName}}" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem Text="Excluir" BackgroundColor="{StaticResource TertiaryColor}" Command="{Binding BindingContext.DeleteCartItemCommand, Source={x:Reference CartPageName}}" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
+                                    <StackLayout>
+                                        <Frame Style="{DynamicResource CartItemConteiner}" BackgroundColor="{Binding BgColorCartItemConteiner}">
+                                            <Grid ColumnSpacing="4" VerticalOptions="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <CheckBox IsVisible="{Binding Source={x:Reference CartPageName}, Path=BindingContext.IsInCartMode}" IsChecked="{Binding IsInCart, Mode=TwoWay}" Style="{DynamicResource CheckBoxIsInCart}" />
+
+                                                    <Grid BackgroundColor="Transparent">
+                                                        <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="CheckBoxIsInCart_Tapped"/>
+                                                        </Grid.GestureRecognizers>
+                                                    </Grid>
+                                                </Grid>
+
+
+                                                <Editor AutoSize="TextChanges" Grid.Column="1" Text="{Binding Name, Mode=TwoWay}" Style="{DynamicResource CartItemName}"/>
+                                                <Grid Grid.Column="2" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="0">
+                                                    <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource CartItemFrameBase}">
+                                                        <Label Text="{Binding Source={x:Reference Name=CartPageName}, Path=BindingContext.CurrencySymbol}" Style="{DynamicResource CartItemPriceCurrencySymbols}" />
+                                                    </Frame>
+
+                                                    <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource CartItemFramePrice}">
+                                                        <Entry Text="{Binding DisplayPrice, Mode=TwoWay}" Keyboard="Numeric" Style="{DynamicResource CartItemPrice}">
+                                                            <Entry.Behaviors>
+                                                                <toolkit:EventToCommandBehavior EventName="TextChanged" Command="{Binding Source={x:Reference Name=CartPageName}, Path=BindingContext.PriceListChangedCommand}" CommandParameter="{Binding .}" />
+                                                            </Entry.Behaviors>
+                                                        </Entry>
+                                                    </Frame>
+
+                                                    <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource CartItemFrameQuantity}">
+                                                        <Entry Text="{Binding Quantity, Mode=TwoWay}" Style="{DynamicResource CartItemQuantity}">
+                                                            <Entry.Behaviors>
+                                                                <toolkit:EventToCommandBehavior EventName="TextChanged" 
+                                                                    Command="{Binding Source={x:Reference Name=CartPageName}, Path=BindingContext.QuantityListChangedCommand}" 
+                                                                    CommandParameter="{Binding .}" />
+                                                            </Entry.Behaviors>
+                                                        </Entry>
+                                                    </Frame>
+
+                                                    <Frame Grid.Row="1" Style="{StaticResource CartItemFrameTotal}">
+                                                        <Label Text="{Binding DisplayTotalPrice}" Style="{DynamicResource CartItemTotalPrice}" />
+                                                    </Frame>
+                                                </Grid>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <Frame Grid.Row="2" Style="{StaticResource ExternalBottomContainer}">
+            <Grid RowDefinitions="Auto,*">
+
+                <StackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <StackLayout IsVisible="{Binding IsInCartMode, Converter={StaticResource BooleanNegation}}" Orientation="Vertical">
+                        <Label Text="O total da compra&#x0a;não é exibido no modo “Lista”." Style="{StaticResource LblTotalIsUnavailable}" />
+                    </StackLayout>
+                    
+                    <StackLayout IsVisible="{Binding IsInCartMode}" HorizontalOptions="Fill" Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="Total no carrinho: " Style="{StaticResource LblCartTotalText}" />
+                            <Label Text="{Binding GrandTotal}" Style="{StaticResource LblCartTotalValue}" />
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Center" IsVisible="{Binding HasItemsOutsideCart}" Orientation="Horizontal">
+                            <Label Text="{Binding ItensOutsideCartCount}" Style="{StaticResource LblMissingCartItemsCount}" />
+                            <Label Text="itens da lista ainda não estão no carrinho" Style="{StaticResource LblMissingItemText}" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Center" IsVisible="{Binding HasItemsOutsideCart, Converter={StaticResource BooleanNegation}}" Orientation="Horizontal">
+                            <Label IsVisible="{Binding CartHasItems}" Text="Todos os itens já estão no carrinho" Style="{StaticResource LblMissingItemText}" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                
+                <pancake:PancakeView Grid.Row="1" Style="{StaticResource InternalBottomContainer}">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <StackLayout Orientation="Horizontal" Style="{StaticResource SltCartMode}" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            
+                            <Label Text="Modo:" Style="{StaticResource LblItemCart}" HorizontalOptions="StartAndExpand" />
+
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="&#xf303;" Style="{StaticResource LblModeChangeHelper}" FontFamily="FontAwesomeSolid"/>
+                                    <Label Text="Lista" Style="{StaticResource LblModeChangeHelper}" />
+                                </StackLayout>
+
+                                <Switch IsToggled="{Binding IsInCartMode, Mode=TwoWay}" Toggled="CartModeSwitch_Toggled" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="&#xf07a;" Style="{StaticResource LblModeChangeHelper}" FontFamily="FontAwesomeSolid"/>
+                                    <Label Text="Carrinho" Style="{StaticResource LblModeChangeHelper}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                            <Label Text="&#xf059;" FontFamily="FontAwesomeSolid" Style="{StaticResource LblHelp}" HorizontalOptions="EndAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ReviewTutorialCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+
+                        <Label Text="Nome do item:" Style="{StaticResource LblFieldTag}" />
+                            <Entry Text="{Binding NameCartItemInsertion, Mode=TwoWay}" Style="{StaticResource EntryItem}" />
+
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Quantidade:" Style="{StaticResource LblFieldTag}" />
+                                    <Entry Keyboard="Numeric" Text="{Binding QuantityCartItemInsertion, Mode=TwoWay}" Style="{StaticResource EntryItemSmaller}" />
+                                </StackLayout>
+
+                                <StackLayout IsVisible="{Binding IsInCartMode}" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Preço:" Style="{StaticResource LblFieldTag}" />
+                                    <Entry Keyboard="Numeric" Text="{Binding PriceCartItemInsertion, Mode=TwoWay}" Style="{StaticResource EntryItemSmaller}" />
+                                </StackLayout>
+                            </StackLayout>
+
+                            <Button Text="＋ Adicionar item" Command="{Binding AddNewCartItemCommand}" Style="{StaticResource PrimaryButton}" />
+                        </StackLayout>
+
+                    </pancake:PancakeView>
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>

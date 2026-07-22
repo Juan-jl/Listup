@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listup.Views.ChangedCartModeAlertPage"
+             BackgroundColor="Transparent">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Style="{StaticResource ExternalContainerAlert}">
+                <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource InternalContainerAlert}">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding AddModeIconText}" Style="{StaticResource ModeIcon}" FontFamily="FontAwesomeSolid"/>
+                        <StackLayout Orientation="Vertical" Style="{StaticResource LabelsContainer}">
+                            <Label Text="{Binding AddModeText}" Style="{StaticResource LblCartMode}" />
+                            <Label Text="ATIVADO" Style="{StaticResource LblActivationIndicator}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

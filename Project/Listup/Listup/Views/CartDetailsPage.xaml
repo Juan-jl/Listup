@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listup.Views.CartDetailsPage"
+             Style="{StaticResource GlobalPrimaryPageBackgroundStyle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <Frame Style="{StaticResource GlobalHeader}">
+                    <Grid VerticalOptions="Center">
+                        <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center">
+                            <Label Text="DETALHES DA COMPRA" Style="{StaticResource GlobalTitleLabel}" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <Frame Style="{StaticResource ContainerItems}">
+                    <StackLayout>
+                        <Label Text="Nome da compra:" Style="{StaticResource DetailsItemTitle}" />
+                        <Frame Style="{StaticResource FrameBorder}">
+                            <Entry Text="{Binding CartTitle, Mode=TwoWay}" Completed="UpdateDataAsync" Style="{StaticResource CartTitle}" />
+                        </Frame>
+                    
+                        <Label Text="Anotações e lembretes:" Style="{StaticResource DetailsItemTitle}" />
+                        <Frame Style="{StaticResource FrameBorder}">
+                            <Editor Text="{Binding CartDescription, Mode=TwoWay}" Completed="UpdateDataAsync" Style="{StaticResource CartDescription}" />
+                        </Frame>
+
+                        <Label Text="Formato de exibição de moeda:" Style="{StaticResource DetailsItemTitle}" />
+                        <Frame Style="{StaticResource FrameBorder}">
+                            <Picker Title="Selecione uma moeda" ItemsSource="{Binding PickerItems}" SelectedIndex="{Binding SelectedPickerIndex, Mode=TwoWay}"  Style="{StaticResource PkrCurrency}"/>
+                        </Frame>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Data de criação:" Style="{StaticResource DateLabel}" />
+                            <Label Text="{Binding CreationDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" Style="{StaticResource DateLabel}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Data de edição:" Style="{StaticResource DateLabel}" />
+                            <Label Text="{Binding EditedDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" Style="{StaticResource DateLabel}" />
+                        </StackLayout>
+
+                        <Button Text="OK" Command="{Binding NavigateBackCommand}" Style="{StaticResource OkButton}" />
+                        <Label Text="As informações são salvas automaticamente." Style="{StaticResource GlobalFootnoteText}" />
+                        <Button Text="EXCLUIR" Command="{Binding DeleteCartCommand}" Style="{StaticResource DeleteButton}" />
+
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

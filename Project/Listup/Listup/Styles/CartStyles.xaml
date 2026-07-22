@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    x:Class="Listup.Styles.CartStyles">
+
+    <Style TargetType="Frame" x:Key="Header" BasedOn="{StaticResource GlobalHeader}">
+        <Setter Property="HeightRequest" Value="50" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="EmptyCartItemsContainer">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0,30,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="EmptyCartItemsTitle">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="EmptyCartItemsSubtitle">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="Details">
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource QuaternaryTextColor}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="DetailsText">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="DetailsIcon">
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="LegendFieldContainer">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0,-8,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LegendField">
+        <Setter Property="FontSize" Value="9" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="CartItemConteiner">
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0,0,0,5" />
+        <!--Background color is defined by the screen's View Model because it's dynamic-->
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="CheckBoxIsInCart" >
+        <Setter Property="Scale" Value="1.4" />
+        <Setter Property="Color" Value="{DynamicResource TertiaryContainerColor}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="CartItemFrameBase">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+    
+    <Style TargetType="Frame" BasedOn="{StaticResource CartItemFrameBase}" x:Key="CartItemFramePrice">
+        <Setter Property="Margin" Value="0,0,5,0"/>
+        <Setter Property="WidthRequest" Value="50"/>
+        <Setter Property="HeightRequest" Value="36"/>
+    </Style>
+
+    <Style TargetType="Frame" BasedOn="{StaticResource CartItemFrameBase}" x:Key="CartItemFrameQuantity">
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="WidthRequest" Value="27"/>
+        <Setter Property="HeightRequest" Value="36"/>
+    </Style>
+
+    <Style TargetType="Frame" BasedOn="{StaticResource CartItemFrameBase}" x:Key="CartItemFrameTotal">
+        <Setter Property="Margin" Value="0,0,0,2"/>
+        <Setter Property="Grid.ColumnSpan" Value="3"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartItemName">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartItemPriceCurrencySymbols">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="CartItemPrice">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="HeightRequest" Value="36" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="CartItemQuantity">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="WidthRequest" Value="27" />
+        <Setter Property="HeightRequest" Value="36" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartItemTotalPrice">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="SubtitleLabel">
+        <Setter Property="TextColor" Value="{DynamicResource mainColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="0,0,0,7" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}"/>
+    </Style>
+
+    <Style TargetType="Frame" x:Key="ExternalBottomContainer" BasedOn="{StaticResource GlobalExternalBottomContainer}">
+        <Setter Property="HeightRequest" Value="260" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblCartTotalText">
+        <Setter Property="Margin" Value="0,4,0,0" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblCartTotalValue">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblMissingCartItemsCount">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblMissingItemText">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblTotalIsUnavailable">
+        <Setter Property="Margin" Value="0,14,0,0" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="pancake:PancakeView" x:Key="InternalBottomContainer" BasedOn="{StaticResource GlobalInternalBottomContainer}">
+        <Setter Property="HeightRequest" Value="190" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblItemCart">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="StackLayout" x:Key="SltCartMode">
+        <Setter Property="Margin" Value="0,5,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblModeChangeHelper">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="0,0,0,-5" />
+        <Setter Property="TextColor" Value="{DynamicResource QuinaryTextColor}" />
+    </Style>
+
+    <Style TargetType="Picker" x:Key="PickerCartOrList">  
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblHelp">
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource QuinaryTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblFieldTag">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Margin" Value="0,0,0,-13" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="EntryItem">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="EntryItemSmaller">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="PrimaryButton" BasedOn="{StaticResource GlobalPrimaryButton}">
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="Margin" Value="0,0,0,5" />
+        <Setter Property="WidthRequest" Value="270" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HeightRequest" Value="32" />
+    </Style>
+
+</ResourceDictionary>

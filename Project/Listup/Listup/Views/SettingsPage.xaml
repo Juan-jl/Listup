@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listup.Views.SettingsPage"
+             Style="{StaticResource GlobalPrimaryPageBackgroundStyle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Style="{StaticResource GlobalHeader}">
+                    <Label Text="Configurações" Style="{StaticResource GlobalTitleLabel}" />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource ExternalOptionsContainer}">
+                    <StackLayout Style="{StaticResource InternalOptionsContainer}">
+
+                        <StackLayout Style="{StaticResource OptionsContainerExternalItem}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding StillInDevelopmentCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Style="{StaticResource OptionsContainerInternalItem}">
+                                <Grid ColumnDefinitions="1*,4*">
+                                    <Label Text="&#xf1ab;" FontFamily="FontAwesomeSolid" Style="{StaticResource OptionsContainerIconItem}"  Grid.Column="0"/>
+                                    <Label Text="ALTERAR IDIOMA" Style="{StaticResource OptionsContainerTitleItem}" Grid.Column="1"/>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource OptionsContainerExternalItem}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeCurrencyCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Style="{StaticResource OptionsContainerInternalItem}">
+                                <Grid ColumnDefinitions="1*,4*">
+                                    <Label Text="&#xe528;" FontFamily="FontAwesomeSolid" Style="{StaticResource OptionsContainerIconItem}"  Grid.Column="0"/>
+                                    <Label Text="ALTERAR MOEDA" Style="{StaticResource OptionsContainerTitleItem}" Grid.Column="1"/>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource OptionsContainerExternalItem}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ReviewTutorialCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Style="{StaticResource OptionsContainerInternalItem}">
+                                <Grid ColumnDefinitions="1*,4*">
+                                    <Label Text="&#xf059;" FontFamily="FontAwesomeSolid" Style="{StaticResource OptionsContainerIconItem}"  Grid.Column="0"/>
+                                    <Label Text="REVER TUTORIAL" Style="{StaticResource OptionsContainerTitleItem}" Grid.Column="1"/>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+
+                <Button Text="VOLTAR" Command="{Binding NavigateBackCommand}" Style="{StaticResource GlobalPrimaryButton}" />
+
+                <Label Text="Aplicativo desenvolvido por" Style="{StaticResource LblDevelopedBy}" />
+                <Label Text="Juan Lucas Cardoso" Style="{StaticResource LblDeveloperName}" />
+                <Label Text="— 28/06/2026 —" Style="{StaticResource LblDevelopmentDate}" />
+                <Label Text="Github: https://github.com/Juan-jl" Style="{StaticResource LblLinkGitHub}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenLinkGitHubCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="{Binding Contact, StringFormat='Contato: {0}'}" Style="{StaticResource LblEmail}"/>
+
+                <Label Text="LISTUP 1.0" Style="{StaticResource LblAppTitle}" />
+                <Image Source="AppLogoFrameless" Style="{StaticResource ImgLogoApp}" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

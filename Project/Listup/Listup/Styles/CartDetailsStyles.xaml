@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Listup.Styles.CartDetailsStyles">
+
+    <Style TargetType="Frame" x:Key="ContainerItems">
+        <Setter Property="Margin" Value="10,0,20,0" />
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="DetailsItemTitle">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="FrameBorder">
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryContainerColor}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="CartTitle">
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainContainerColor}" />
+    </Style>
+
+    <Style TargetType="Editor" x:Key="CartDescription">
+        <Setter Property="HeightRequest" Value="160" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainContainerColor}" />
+    </Style>
+
+    <Style TargetType="Picker" x:Key="PkrCurrency">
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainContainerColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="DateLabel">
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="OkButton" BasedOn="{StaticResource GlobalPrimaryButton}">
+        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="DeleteButton" BasedOn="{StaticResource GlobalPrimaryButton}">
+        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+    </Style>
+
+</ResourceDictionary>

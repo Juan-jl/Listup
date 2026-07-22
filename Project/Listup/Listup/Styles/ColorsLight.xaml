@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Listup.Styles.ColorsLight">
+
+    <Color x:Key="StatusBarColor">#F4FBFF</Color>
+    <Color x:Key="NavigationBarColor">#FFFFFF</Color>
+
+    <Color x:Key="FontIconsColorPrimary">#000000</Color>
+
+    <Color x:Key="MainBgColor">#F4FBFF</Color>
+    <Color x:Key="SecondaryBgColor">#FFFFFF</Color>
+    <Color x:Key="TertiaryBgColor">#dbf2ff</Color>
+    <Color x:Key="GrayColorWithOpacity">#1A1A1A1A</Color>
+
+    <Color x:Key="MainColor">#122E60</Color>
+    <Color x:Key="SecondaryColor">#3B79EB</Color>
+    <Color x:Key="TertiaryColor">#EB3B3B</Color>
+
+    <Color x:Key="MainContainerColor">#FFFFFF</Color>
+    <Color x:Key="SecondaryContainerColor">#E9F3F8</Color>
+    <Color x:Key="TertiaryContainerColor">#68D58C</Color>
+    <Color x:Key="QuaternaryContainerColor">#FFFFFF</Color>
+    
+    <Color x:Key="ExclusiveColorForExternalBottomContainer">#3B79EB</Color>
+    <Color x:Key="ExclusiveColorForCurrencySelectionContainer">#E9F3F8</Color>
+
+    <Color x:Key="MainTextColor">#000000</Color>
+    <Color x:Key="SecondaryTextColor">#FFFFFF</Color>
+    <Color x:Key="TertiaryTextColor">#9D9D9D</Color>
+    <Color x:Key="QuaternaryTextColor">#e3e3e3</Color>
+    <Color x:Key="QuinaryTextColor">#525252</Color>
+    <Color x:Key="LinkColor">#0000EE</Color>
+
+</ResourceDictionary>

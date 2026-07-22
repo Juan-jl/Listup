@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.36107.64
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listup.Android", "Listup\Listup.Android\Listup.Android.csproj", "{C20FEC67-2F50-424C-B350-19208E53DB00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listup", "Listup\Listup\Listup.csproj", "{F8C44132-1F97-4FF7-9683-09C17C94CF01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20FEC67-2F50-424C-B350-19208E53DB00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C44132-1F97-4FF7-9683-09C17C94CF01}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07ADF48E-8AE5-4761-8912-31DEA555F055}
+	EndGlobalSection
+EndGlobal

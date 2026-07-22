@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+                    x:Class="Listup.Styles.WelcomeStyles">
+
+    <Style TargetType="Frame" x:Key="MainContainerFrame">
+        <Setter Property="Margin" Value="30,30,30,0" />
+        <Setter Property="HeightRequest" Value="490" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+    </Style>
+    
+    <Style TargetType="StackLayout" x:Key="MainContainer" >
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Image" x:Key="AppLogo">
+        <Setter Property="WidthRequest" Value="120" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame1Title" >
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="0,30,0,0" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame1Description" >
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,30,0,0" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="Frame1IconsExternalContainer" >
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="Margin" Value="20,32,20,0" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecondaryContainerColor}" />
+    </Style>
+
+    <Style TargetType="StackLayout" x:Key="Frame1IconsInternalContainer" >
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Spacing" Value="30" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame1Icon" >
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontFamily" Value="FontAwesomeSolid" />
+        <Setter Property="TextColor" Value="{StaticResource FontIconsColorPrimary}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame2Title">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame2Icon">
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="FontFamily" Value="FontAwesomeSolid" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="TextColor" Value="{StaticResource TertiaryContainerColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame2Description">
+        <Setter Property="VerticalTextAlignment" Value="Start" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="Frame2ImageContainer">
+        <Setter Property="Margin" Value="40,20,40,0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecondaryContainerColor}" />
+    </Style>
+
+    <Style TargetType="Image" x:Key="Frame2Image">
+        <Setter Property="HeightRequest" Value="250" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Frame3Title" BasedOn="{StaticResource Frame2Title}" />
+
+    <Style TargetType="Label" x:Key="Frame3Icon" BasedOn="{StaticResource Frame2Icon}" />
+
+    <Style TargetType="Label" x:Key="Frame3Description" BasedOn="{StaticResource Frame2Description}" />
+
+    <Style TargetType="Frame" x:Key="Frame3ImageContainer" BasedOn="{StaticResource Frame2ImageContainer}" >
+        <Setter Property="HeightRequest" Value="200" />
+    </Style>
+
+    <Style TargetType="Image" x:Key="Frame3Image" />
+
+    <Style TargetType="StackLayout" x:Key="PaginationDotsContainer" >
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Spacing" Value="12" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+    </Style>
+
+    <Style TargetType="BoxView" x:Key="PaginationDot" >
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecondaryTextColor}" />
+        <Setter Property="WidthRequest" Value="8" />
+        <Setter Property="HeightRequest" Value="8" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="BoxView" x:Key="ActivatedPaginationDot" BasedOn="{StaticResource PaginationDot}" >
+        <Setter Property="BackgroundColor" Value="{StaticResource TertiaryContainerColor}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="BtnMoveBackwards" >
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="BorderWidth" Value="3" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBgColor}" />
+        <Setter Property="BorderColor" Value="{StaticResource TertiaryContainerColor}" />
+        <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="BtnMoveForward" >
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource TertiaryContainerColor}" />
+    </Style>
+
+</ResourceDictionary>

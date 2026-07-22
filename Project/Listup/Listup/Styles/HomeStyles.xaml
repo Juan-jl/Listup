@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    x:Class="Listup.Styles.HomeStyles">
+
+    <Style TargetType="Frame" x:Key="ExternalBottomContainer" BasedOn="{StaticResource GlobalExternalBottomContainer}">
+        <Setter Property="HeightRequest" Value="90" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="NoCartsTitle">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="Margin" Value="5,0,5,200" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="CartContainer">
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryContainerColor}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="Margin" Value="10,10,10,0" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartContainerIcon">
+        <Setter Property="FontFamily" Value="FontAwesomeSolid" />
+        <Setter Property="FontSize" Value="55" />
+        <Setter Property="TextColor" Value="{DynamicResource FontIconsColorPrimary}" />
+        <Setter Property="Margin" Value="-10,0,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartContainerTitle">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor }"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="Margin" Value="0,4,0,0" />
+        <Setter Property="WidthRequest" Value="1" /> <!--Prevents the content from extending beyond the space.-->
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartDates">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor }" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="Margin" Value="0,-3,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="CartDescription">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor }" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="MaxLines" Value="3" />
+        <Setter Property="Margin" Value="0,-3,3,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblHowToDelete">
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style TargetType="StackLayout" x:Key="StackLayoutLoadIndicator">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style TargetType="ActivityIndicator" x:Key="LoadIndicator">
+        <Setter Property="Color" Value="{DynamicResource MainColor}" />
+    </Style>
+    
+    <Style TargetType="Frame" x:Key="ContainerLoadIndicator">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainContainerColor}" />
+        <Setter Property="CornerRadius" Value="30" />
+    </Style>
+
+</ResourceDictionary>

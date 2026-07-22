@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+                    x:Class="Listup.Styles.ChangedCartModeAlertStyles">
+
+    <Style TargetType="Frame" x:Key="ExternalContainerAlert">
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryContainerColor}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="InternalContainerAlert">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryContainerColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="ModeIcon">
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelsContainer">
+        <Setter Property="Margin" Value="20,0,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblCartMode" >
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblActivationIndicator" >
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+    </Style>
+
+</ResourceDictionary>

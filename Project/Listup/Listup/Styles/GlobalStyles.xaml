@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                    x:Class="Listup.Styles.GlobalStyles">
+
+    <LinearGradientBrush x:Key="BackgroundGradient1" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="{StaticResource MainBgColor}" Offset="0.0" />
+        <GradientStop Color="{StaticResource TertiaryBgColor}" Offset="0.8" />
+    </LinearGradientBrush>
+
+    <Style TargetType="ContentPage" x:Key="GlobalPrimaryGradientPageBackgroundStyle">
+        <Setter Property="Background" Value="{StaticResource BackgroundGradient1}" />
+    </Style>
+
+    <Style TargetType="ContentPage" x:Key="GlobalPrimaryPageBackgroundStyle">
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainBgColor}" />
+    </Style>
+
+    <Style TargetType="ContentPage" x:Key="GlobalSecondaryPageBackgroundStyle">
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryBgColor}" />
+    </Style>
+
+    <Style TargetType="ContentPage" x:Key="GlobalPrimaryOpaqueBackground">
+        <Setter Property="BackgroundColor" Value="{DynamicResource GrayColorWithOpacity}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="GlobalTitleLabel">
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="22" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="GlobalIconHeader">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="GlobalHeader">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style TargetType="Frame" x:Key="GlobalExternalBottomContainer">
+        <!--Height is defined on each page style file where it is used-->
+        <Setter Property="BackgroundColor" Value="{DynamicResource ExclusiveColorForExternalBottomContainer}" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style TargetType="pancake:PancakeView" x:Key="GlobalInternalBottomContainer">
+        <!--Height is defined on each page style file where it is used-->
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainContainerColor}" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="0,15,0,0"/>
+        <Setter Property="CornerRadius" Value="50,50,0,0" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="GlobalPrimaryButton">
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Margin" Value="40,20,40,20" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="GlobalFootnoteText">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+    </Style>
+
+</ResourceDictionary>

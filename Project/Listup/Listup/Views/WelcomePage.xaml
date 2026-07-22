@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listup.Views.WelcomePage"
+             Style="{StaticResource GlobalPrimaryGradientPageBackgroundStyle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame x:Name="Frame1" Style="{StaticResource MainContainerFrame}">
+                    <StackLayout Style="{StaticResource MainContainer}" >
+                        <Image Source="AppLogoFrameless" Style="{StaticResource AppLogo}" />
+                        <Label Text="LISTUP" Style="{StaticResource Frame1Title}" />
+                        <Label Text="Organize suas compras de mercado de forma simples!" Style="{StaticResource Frame1Description}"/>
+                        <Frame Style="{StaticResource Frame1IconsExternalContainer}">
+                            <StackLayout Style="{StaticResource Frame1IconsInternalContainer}">
+                                <Label Text="&#xf303;" Style="{StaticResource Frame1Icon}"/>
+                                <Label Text="&#xf07a;" Style="{StaticResource Frame1Icon}" />
+                                <Label Text="&#xf3d1;" Style="{StaticResource Frame1Icon}" />
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout Style="{StaticResource PaginationDotsContainer}">
+                            <BoxView Style="{StaticResource ActivatedPaginationDot}" />
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame x:Name="Frame2" Style="{StaticResource MainContainerFrame}">
+                    <StackLayout Style="{StaticResource MainContainer}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="MODO&#10;LISTA" Style="{StaticResource Frame2Title}" />
+                            <Label Text="&#xf303;" Style="{StaticResource Frame2Icon}" />
+                        </StackLayout>
+                        <Label Text="Use para planejar suas compras antes de sair de casa, adicionando produtos e quantidades de forma rápida e organizada." Style="{StaticResource Frame2Description}" />
+                        <Frame Style="{StaticResource Frame2ImageContainer}">
+                            <Image x:Name="WelcomeImageFrame2" Style="{StaticResource Frame2Image}" />
+                        </Frame>
+                        <StackLayout Style="{StaticResource PaginationDotsContainer}">
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                            <BoxView Style="{StaticResource ActivatedPaginationDot}" />
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame x:Name="Frame3" Style="{StaticResource MainContainerFrame}">
+                    <StackLayout Style="{StaticResource MainContainer}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="MODO&#10;CARRINHO" Style="{StaticResource Frame3Title}" />
+                            <Label Text="&#xf07a;" Style="{StaticResource Frame3Icon}" />
+                        </StackLayout>
+                        <Label Text="Durante a compra, entre no Modo Carrinho: marque itens, adicione os preços e acompanhe o total em tempo real." Style="{StaticResource Frame3Description}" />
+                        <Frame Style="{StaticResource Frame3ImageContainer}">
+                            <Image x:Name="WelcomeImageFrame3" Style="{StaticResource Frame3Image}" />
+                        </Frame>
+                        <StackLayout Style="{StaticResource PaginationDotsContainer}">
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                            <BoxView Style="{StaticResource PaginationDot}" />
+                            <BoxView Style="{StaticResource ActivatedPaginationDot}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="0,15,50,0">
+                    <Button x:Name="BtnMoveFrameBackwards" Text="Voltar" Style="{StaticResource BtnMoveBackwards}" Clicked="MoveFrameBackwards_Clicked" />
+                    <Button x:Name="BtnMoveFrameForward" Text="Próximo" Style="{StaticResource BtnMoveForward}" Clicked="MoveFrameForward_Clicked" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
